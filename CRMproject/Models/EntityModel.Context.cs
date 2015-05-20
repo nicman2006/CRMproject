@@ -13,10 +13,10 @@ namespace CRMproject.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CRMEntities : DbContext
+    public partial class CRMEntities1 : DbContext
     {
-        public CRMEntities()
-            : base("name=CRMEntities")
+        public CRMEntities1()
+            : base("name=CRMEntities1")
         {
         }
     
@@ -25,5 +25,7 @@ namespace CRMproject.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<Files> Files { get; set; }
+        public DbSet<Message> Message { get; set; }
     }
 }
